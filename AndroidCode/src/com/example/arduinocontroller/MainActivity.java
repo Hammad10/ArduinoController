@@ -8,13 +8,15 @@ import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 
+// This activity is the splash screen
+// Codebase for this activity taken from http://www.onlymobilepro.com/2013/01/16/android-beginner-creating-splash-screen/
+
 public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splash);	
-		
 		
 	       Thread logoTimer = new Thread() {
 	            public void run(){
@@ -28,10 +30,9 @@ public class MainActivity extends Activity {
 	                } 
 	                 
 	                catch (InterruptedException e) {
-	                    // TODO Auto-generated catch block
 	                    e.printStackTrace();
 	                } 
-	                finally{
+	                finally {
 	                    finish();
 	                }
 	            }
