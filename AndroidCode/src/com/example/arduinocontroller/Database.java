@@ -1,5 +1,4 @@
 // Database.java
-// hello
 package com.example.arduinocontroller;
 
 import android.app.Activity;
