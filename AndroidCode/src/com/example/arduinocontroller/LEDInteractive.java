@@ -35,15 +35,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.app.ActionBarActivity;
 
+// Light sensor codebase taken from: http://karanbalkar.com/2014/01/detect-and-use-light-and-gyroscope-sensors-in-android/
+// Codebase for the insert(Context context) method taken from: http://sampleprogramz.com/android/mysqldb.php
 
 public class LEDInteractive extends ActionBarActivity implements SensorEventListener {
 	
 	static String pin;
 	static String intensity;
 	static String length;
-	static InputStream is=null;
-	static String result=null;
-	static String line=null;
+	static InputStream is = null;
+	static String result = null;
+	static String line = null;
 	static int code;
 	
 	private TextView lightLevel;
@@ -55,13 +57,14 @@ public class LEDInteractive extends ActionBarActivity implements SensorEventList
     public String capturedValue;
     public int lightValueInt;
 
-	 @Override
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
-        // TODO Auto-generated method stub
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.ledinteractive);
+		
+	    // TODO Auto-generated method stub
+	    super.onCreate(savedInstanceState);
+	    setContentView(R.layout.ledinteractive);
         
-        //SENSOR STUFF ----
+        // Initialize the sensor ----
         lightLevel= (TextView)findViewById(R.id.lightLevel);
         capturedLevel = (TextView)findViewById(R.id.capturedLevel);
         // Get an instance of the sensor service
@@ -76,7 +79,7 @@ public class LEDInteractive extends ActionBarActivity implements SensorEventList
         }
         else
             Toast.makeText(getApplicationContext(),"No sensor is detected", Toast.LENGTH_SHORT).show();
-        //---------------
+        //----------------------------
         
         final EditText e_pin=(EditText) findViewById(R.id.input_LED1);
         final TextView e_intensity=(TextView) findViewById(R.id.capturedLevel);
@@ -87,8 +90,7 @@ public class LEDInteractive extends ActionBarActivity implements SensorEventList
 			
         	@Override
         	public void onClick (View v) {
-        		// TODO Auto-generated method stub
-    				
+
         		pin = e_pin.getText().toString();
         		if (lightValueInt >= 0 && lightValueInt <= 4)
         			intensity = "Low";
@@ -112,7 +114,7 @@ public class LEDInteractive extends ActionBarActivity implements SensorEventList
     @Override
     public final void onSensorChanged(SensorEvent event) {
  
-        /*float*/ lightValue = event.values[0];
+        lightValue = event.values[0];
         
         lightLevel.setText("Light level is: " + "" +lightValue); 
 
@@ -127,7 +129,6 @@ public class LEDInteractive extends ActionBarActivity implements SensorEventList
  
     @Override
     protected void onPause() {
-        // important to unregister the sensor when the activity pauses.
         super.onPause();
         mSensorManager.unregisterListener(this);
     }
@@ -139,7 +140,7 @@ public class LEDInteractive extends ActionBarActivity implements SensorEventList
 		Toast.makeText(getApplicationContext(),"Captured " + capturedValue, Toast.LENGTH_SHORT).show();
 	}
 	
- 	public static void insert(Context context) { //, String fileName) {
+ 	public static void insert(Context context) {
 		
     	Thread thread = new Thread(new Runnable(){
     		
@@ -151,11 +152,9 @@ public class LEDInteractive extends ActionBarActivity implements SensorEventList
     	    	nameValuePairs.add(new BasicNameValuePair("intensity",intensity));
     	    	nameValuePairs.add(new BasicNameValuePair("length",length));
 
-	    	    try
-	    	    {	
+	    	    try {	
 	    	    	HttpClient httpclient = new DefaultHttpClient();
-	    	    	HttpPost httppost = new HttpPost("http://hammadmirza.com/arduinodb/LED.php");//("http://localhost/insert.php");//("hammad3.db.8869720.hostedresource.com");//("http://10.0.2.2/insert.php");
-	    	    	//HttpPost httppost = new HttpPost("http://hammadmirza.com/arduinodb/" + fileName + ".php");
+	    	    	HttpPost httppost = new HttpPost("http://xxxxLED.php");
 	    	    	httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 	    	    	HttpResponse response = httpclient.execute(httppost); 
 	    	    	HttpEntity entity = response.getEntity();
@@ -163,19 +162,15 @@ public class LEDInteractive extends ActionBarActivity implements SensorEventList
 	    	    	Log.e("pass 1", "connection success ");
 	    	    }
 	    	    
-	    	    catch(Exception e)
-	    	    {
+	    	    catch(Exception e) {
 	    	    	Log.e("Fail 1", e.toString());
-	    	    	//Toast.makeText(getApplicationContext(), "Invalid IP Address",
-	    	    		//	Toast.LENGTH_LONG).show();
 	    	    }     
     	    }
     	});
     	
     	thread.start();
     	
-        try
-        {
+        try {
             BufferedReader reader = new BufferedReader (new InputStreamReader(is,"iso-8859-1"),8);
             StringBuilder sb = new StringBuilder();
             
@@ -187,24 +182,17 @@ public class LEDInteractive extends ActionBarActivity implements SensorEventList
             is.close();
             result = sb.toString();
             
-            //System.out.println("Result is " + result.toString());
-	    	//Toast.makeText(getApplicationContext(), "Result is" + result,
-	    		//	Toast.LENGTH_LONG).show();
-            
 	    	Log.e("pass 2", "connection success ");
         }
         
-        catch(Exception e)
-        {
+        catch(Exception e) {
             Log.e("Fail 2", e.toString());
         }
         
-        // MAKE A CHECK
+        // Need to implement a check for successful insertion
     	Toast.makeText(context, "Inserted Successfully",
     			Toast.LENGTH_LONG).show();
-
 	}
-
 }
 	
 
