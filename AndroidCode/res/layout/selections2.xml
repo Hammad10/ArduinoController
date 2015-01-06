@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Pick what you want"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/StepperMotor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Speaker"
+        android:layout_alignRight="@+id/Speaker"
+        android:layout_below="@+id/Speaker"
+        android:layout_marginTop="16dp"
+        android:onClick="StepperMotor"
+        android:text="Stepper Motor" />
+
+    <Button
+        android:id="@+id/LED"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="16dp"
+        android:onClick="LED"
+        android:text="LED" />
+
+    <Button
+        android:id="@+id/Speaker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/LED"
+        android:layout_alignRight="@+id/LED"
+        android:layout_below="@+id/LED"
+        android:layout_marginTop="16dp"
+        android:onClick="Speaker"
+        android:text="Speaker" />
+
+</RelativeLayout>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/motorrow1"
+        android:layout_width="400dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/white" >
+
+        <TextView
+            android:id="@+id/motorpin1description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="Pin 1:"
+            android:padding="5dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+        <EditText
+            android:id="@+id/input_motorpin1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/motorpin1description"
+            android:layout_alignBottom="@+id/motorpin1description"
+            android:layout_alignParentRight="true"
+            android:hint="Enter Pin 1"
+            android:inputType="number"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/motorrow2"
+        android:layout_width="400dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/motorrow1"
+        android:background="@color/white" >
+
+        <TextView
+            android:id="@+id/motorpin2description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="Pin 2:"
+            android:padding="5dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+        <EditText
+            android:id="@+id/input_motorpin2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/motorpin2description"
+            android:layout_alignBottom="@+id/motorpin2description"
+            android:layout_alignParentRight="true"
+            android:hint="Enter Pin 2"
+            android:inputType="number"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/motorrow3"
+        android:layout_width="400dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/motorrow2"
+        android:background="@color/white" >
+
+        <TextView
+            android:id="@+id/motorpin3description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="Pin 3:"
+            android:padding="5dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/input_motorpin3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/motorpin3description"
+            android:layout_alignBottom="@+id/motorpin3description"
+            android:layout_alignParentRight="true"
+            android:hint="Enter Pin 3"
+            android:inputType="number"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/motorrow4"
+        android:layout_width="400dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/motorrow3"
+        android:background="@color/white" >
+
+        <TextView
+            android:id="@+id/motorpin4description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="Pin 4:"
+            android:padding="5dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/input_motorpin4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/motorpin4description"
+            android:layout_alignBottom="@+id/motorpin4description"
+            android:layout_alignParentRight="true"
+            android:hint="Enter Pin 4"
+            android:inputType="number"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/motorrow5"
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/motorrow4"
+            android:layout_alignParentLeft="true"
+            android:background="@color/white" >
+
+            <TextView
+                android:id="@+id/motorrow5description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:padding="5dp"
+                android:text="Speed:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/input_motorspeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/motorrow5description"
+                android:layout_alignBottom="@+id/motorrow5description"
+                android:layout_alignParentRight="true"
+                android:hint="Enter Speed"
+                android:inputType="number"
+                android:textAppearance="?android:attr/textAppearanceMedium" >
+
+            </EditText>
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:id="@+id/motorrow6"
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/motorrow5"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="23dp"
+            android:background="@color/white" >
+
+            <TextView
+                android:id="@+id/motorrow6description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:padding="5dp"
+                android:text="Direction:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Spinner
+                android:id="@+id/input_motordirection"
+                android:layout_width="175dp"
+                android:layout_height="200dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:spinnerMode="dropdown"
+                tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+            
+        </RelativeLayout>
+
+        
+        <Button
+            android:id="@+id/button2"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="32dp"
+            android:layout_below="@+id/motorrow6"
+            android:text="Go" />
+
+  		 <Button
+            android:id="@+id/button1"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/motorrow6"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="32dp"
+            android:onClick="goInteractive"
+            android:text="Interactive Option" />
+
+</RelativeLayout>
+
+<!-- http://stackoverflow.com/questions/15333529/how-to-provide-shadow-to-button -->

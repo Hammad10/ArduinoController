@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/LED1row"
+        android:layout_width="400dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/white" >
+
+        <TextView
+            android:id="@+id/LED1description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="Arduino Pin:"
+            android:padding="5dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+        <EditText
+            android:id="@+id/input_LED1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/LED1description"
+            android:layout_alignBottom="@+id/LED1description"
+            android:layout_alignParentRight="true"
+            android:hint="Enter Arduino Pin"
+            android:inputType="number"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/LED2row"
+        android:layout_width="400dp"
+        android:layout_height="125dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/LED1row" >
+
+        <TextView
+            android:id="@+id/LED2description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="LED Intensity:"
+            android:padding="5dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+         <TextView
+             android:id="@+id/lightLevel"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentLeft="true"
+             android:layout_below="@+id/LED2description"
+             android:padding="5dp" />
+
+         <Button
+             android:id="@+id/capturebtn"
+             style="?android:attr/buttonStyleSmall"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/lightLevel"
+             android:layout_marginTop="7dp"
+             android:onClick="lightCapture"
+             android:padding="5dp"
+             android:text="Capture Light" />
+         
+           <TextView
+             android:id="@+id/Captured"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignBaseline="@+id/LED2description"
+             android:layout_alignBottom="@+id/LED2description"
+             android:layout_alignParentRight="true"
+             android:layout_marginRight="45dp"
+             android:textAppearance="?android:attr/textAppearanceMedium"
+             android:text = "Captured:" />   
+
+         <TextView
+             android:id="@+id/capturedLevel"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignBaseline="@+id/LED2description"
+             android:layout_alignBottom="@+id/LED2description"
+             android:layout_alignParentRight="true"
+             android:layout_marginRight="5dp"
+             android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    </RelativeLayout>
+
+        <Button
+            android:id="@+id/button2"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/LED3row"
+            android:layout_marginRight="36dp"
+            android:layout_marginTop="20dp"
+            android:text="Go" />
+
+        <RelativeLayout
+            android:id="@+id/LED3row"
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/LED2row"
+            android:background="@color/white" >
+
+            <TextView
+                android:id="@+id/LED3description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:padding="5dp"
+                android:text="Length:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/input_LED3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/LED3description"
+                android:layout_alignBottom="@+id/LED3description"
+                android:layout_alignParentRight="true"
+                android:hint="Enter Seconds"
+                android:inputType="number"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </RelativeLayout>
+
+</RelativeLayout>
+
+<!-- http://stackoverflow.com/questions/15333529/how-to-provide-shadow-to-button -->

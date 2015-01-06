@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android1:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!--
+          <ImageView
+	    android1:layout_width="43dp"
+	    android1:layout_height="43dp"
+	    android:src="@drawable/backbutton"
+	    android1:onClick="goBack" />
+    -->
+
+    <RadioGroup
+        android1:id="@+id/radioGroup1"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignParentLeft="true"
+        android1:layout_below="@+id/textView2"
+        android1:orientation="vertical"
+        android1:paddingLeft="@dimen/activity_horizontal_margin"
+        android1:paddingRight="@dimen/activity_horizontal_margin" >
+
+        <RadioButton
+            android1:id="@+id/radio_LED"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content"
+            android1:checked="true"
+            android1:onClick="selecting"
+            android1:text="LED" />
+
+        <RadioButton
+            android1:id="@+id/radio_speaker"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content"
+            android1:onClick="selecting"
+            android1:text="Speaker" />
+
+        <RadioButton
+            android1:id="@+id/radio_SMotor"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content"
+            android1:onClick="selecting"
+            android1:text="Stepper Motor" />
+
+        <RadioButton
+            android1:id="@+id/radio_other"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content"
+            android1:onClick="selecting"
+            android1:text="Other" />
+
+        <RadioButton
+            android1:id="@+id/radio_sensor"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content"
+            android1:onClick="selecting"
+            android1:text="sensor" />
+    </RadioGroup>
+
+    <TextView
+        android1:id="@+id/textView2"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignParentTop="true"
+        android1:layout_centerHorizontal="true"
+        android1:text="Pick what you want"
+        android1:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android1:id="@+id/button1"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_below="@+id/radioGroup1"
+        android1:layout_marginTop="67dp"
+        android1:layout_toLeftOf="@+id/textView2"
+        android1:text="Done" />
+
+</RelativeLayout>

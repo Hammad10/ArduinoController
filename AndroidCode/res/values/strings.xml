@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Arduino Controller</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <color name="blue">#3399FF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <string-array name="input_LED2">
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+    
+    <string-array name="input_motordirection">
+        <item>Clockwise</item>
+        <item>Counter-Clockwise</item>
+    </string-array>
+    
+</resources>
