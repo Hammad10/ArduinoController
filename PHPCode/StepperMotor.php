@@ -59,6 +59,12 @@
 		$flag['code']=1;
 		echo"hi";
 	}
+	
+	if($r=mysql_query("UPDATE StepperMotor SET readIndicator = '1' WHERE id = '1' ",$con))
+	{
+		$flag['code']=1;
+		echo"hi";
+	}
 
 	# Need to implement check for successful DB insertion
 	print(json_encode($flag));
