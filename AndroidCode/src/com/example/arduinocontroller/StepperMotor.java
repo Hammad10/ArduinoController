@@ -105,7 +105,7 @@ public class StepperMotor extends ActionBarActivity {
 	    	    try
 	    	    {	
 	    	    	HttpClient httpclient = new DefaultHttpClient();
-	    	    	HttpPost httppost = new HttpPost("http://xxxx/LED.php");
+	    	    	HttpPost httppost = new HttpPost("xxxx/StepperMotor.php");
 	    	    	httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 	    	    	HttpResponse response = httpclient.execute(httppost); 
 	    	    	HttpEntity entity = response.getEntity();
