@@ -17,27 +17,33 @@ void loop () {
   int stopIndicator = 1;
   
   while (!Serial.available()) ;
-  Pin1 = Serial.read() - '0';
+  Pin1 = Serial.read();
   pinMode(Pin1, OUTPUT);
+  Serial.println(Pin1);
   while (!Serial.available()) ;
-  Pin2 = Serial.read() - '0';
+  Pin2 = Serial.read();
   pinMode(Pin2, OUTPUT);
+  Serial.println(Pin2);
   while (!Serial.available()) ;
-  Pin3 = Serial.read() - '0';
+  Pin3 = Serial.read();
   pinMode(Pin3, OUTPUT);
+  Serial.println(Pin3);
   while (!Serial.available()) ;
-  Pin4 = Serial.read() - '0';
+  Pin4 = Serial.read();
   pinMode(Pin4, OUTPUT);
+  Serial.println(Pin4);
   
   Stepper motor(200, Pin1, Pin2, Pin3, Pin4); 
   
   while (!Serial.available()) ;
   Speed = Serial.read() - '0';
+  Serial.println(Speed);
   while (!Serial.available()) ;
   Direction = Serial.read() - '0';
+  Serial.println(Direction);
   
   motor.setSpeed(Speed);
   
-  motor.step(Speed*Direction);
+  motor.step(200*Direction);
   
 }
