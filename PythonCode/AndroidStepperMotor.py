@@ -18,13 +18,13 @@ def getDBValues():
     global Pin1, Pin2, Pin3, Pin4, Speed, Direction
     cur.execute("SELECT Pin1 FROM StepperMotor WHERE id='1'")
     Pin1 = ''.join( c for c in cur.fetchone() if  c not in '()' )
-	cur.execute("SELECT Pin2 FROM StepperMotor WHERE id='1'")
+    cur.execute("SELECT Pin2 FROM StepperMotor WHERE id='1'")
     Pin2 = ''.join( c for c in cur.fetchone() if  c not in '()' )
     cur.execute("SELECT Pin3 FROM StepperMotor WHERE id='1'")
     Pin3 = ''.join( c for c in cur.fetchone() if  c not in '()' )
     cur.execute("SELECT Pin4 FROM StepperMotor WHERE id='1'")
     Pin4 = ''.join( c for c in cur.fetchone() if c not in '()' )
-	cur.execute("SELECT Speed FROM StepperMotor WHERE id='1'")
+    cur.execute("SELECT Speed FROM StepperMotor WHERE id='1'")
     Speed = ''.join( c for c in cur.fetchone() if  c not in '()' )
     cur.execute("SELECT Direction FROM StepperMotor WHERE id='1'")
     Direction = ''.join( c for c in cur.fetchone() if  c not in '()' )
@@ -47,13 +47,13 @@ def getAllBytes():
   
     bPin2 = convertToByte(Pin2)
 	
-	bPin3 = convertToByte(Pin3)
-	
-	bPin4 = convertToByte(Pin4)
-	
-	bSpeed = convertToByte(Speed)
-	
-	bDirection = convertToByte(Direction)
+    bPin3 = convertToByte(Pin3)
+                
+    bPin4 = convertToByte(Pin4)
+                
+    bSpeed = convertToByte(Speed)
+                
+    bDirection = convertToByte(Direction)
 
 # Print all values
 def printValues():
@@ -72,17 +72,17 @@ def printValues():
     print(bPin3)
     print(type(bPin3))
 	
-	print(Pin4)
+    print(Pin4)
     #print(type(Length))
     print(bPin4)
     print(type(bPin4))
 
-	print(Speed)
+    print(Speed)
     #print(type(Length))
     print(bSpeed)
     print(type(bSpeed))
 	
-	print(Direction)
+    print(Direction)
     #print(type(Length))
     print(bDirection)
     print(type(bDirection))
