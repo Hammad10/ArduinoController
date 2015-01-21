@@ -2,48 +2,32 @@
 	# Most of this PHP code taken from: http://sampleprogramz.com/android/mysqldb.php
 
 	$host='xxxx';
-	$uname='xxxx';
-	$pwd='xxxx!';
-	$db="xxxx";
+	$username='xxxx';
+	$password='xxxx';
+	$database="xxxx";
 
-	$con = mysql_connect($host,$uname,$pwd) or die("connection failed");
-	mysql_select_db($db,$con) or die("db selection failed");
-	 
-	$pin=$_REQUEST['pin'];
-	$intensity=$_REQUEST['intensity'];
-	$length=$_REQUEST['length'];
+	$db = new mysqli($host, $username, $password, $database);
+	
+	$pin = $_REQUEST['pin'];
+	$intensity = $_REQUEST['intensity'];
+	$length = $_REQUEST['length'];
 
 	$flag['code']=0;
-
-	# Insert ArduinoPin value
-	if($r=mysql_query("UPDATE LED SET ArduinoPin = '$pin' WHERE id = '1' ",$con))
-	{
+	
+	//Define all the input values as an associative array
+	$inputs = array("ArduinoPin" => $pin,
+					"LEDIntensity" => $intensity,
+					"Length" => $length);
+					
+	foreach($inputs as $key => $value) {
+		//Insert each value
+		$q = $db->query("UPDATE `LED` SET `{$key}` = '{$value}' WHERE `id` = '1'");
 		$flag['code']=1;
-		echo"hi";
 	}
 	
-	# Insert LEDIntensity value
-	if($r=mysql_query("UPDATE LED SET LEDIntensity = '$intensity' WHERE id = '1' ",$con))
-	{
-		$flag['code']=1;
-		echo"hi";
-	}
+	$q = $db->query("UPDATE `LED` SET `readIndicator` = '1' WHERE `id` = '1'");
 	
-	# Insert Length value
-	if($r=mysql_query("UPDATE LED SET Length = '$length' WHERE id = '1' ",$con))
-	{
-		$flag['code']=1;
-		echo"hi";
-	}
-	
-	# Insert readIndicator value
-	if($r=mysql_query("UPDATE LED SET readIndicator = '1' WHERE id = '1' ",$con))
-	{
-		$flag['code']=1;
-		echo"hi";
-	}
-
-	# Need to implement check for successful DB insertion
+	// Need to implement check for successful DB insertion
 	print(json_encode($flag));
-	mysql_close($con);
+	
 ?>
